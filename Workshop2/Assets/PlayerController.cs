@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
      */
     public Camera cam;
 
+    public int Health;
+
+    public int potions;
+
+    public GameObject Light;
     /* We need a reference to the agent to update the destination to navigate
      * to.
      */
@@ -39,6 +44,40 @@ public class PlayerController : MonoBehaviour
                 //Move agent to destination (the Navmesh Agent compnent is handling the movement)
                 agent.SetDestination(hit.point);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && potions >= 1)
+        {
+            Instantiate(Light, transform);
+            potions = potions -1;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            Health--;
+        }
+
+        if (collision.gameObject.tag == "potion")
+        {
+            potions++;
+            Destroy(collision.gameObject);
+        }
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "potion")
+        {
+            potions++;
+            Destroy(other.gameObject);
         }
     }
 }
