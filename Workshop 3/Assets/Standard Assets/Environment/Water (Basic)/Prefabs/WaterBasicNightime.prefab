@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 11400000}
   - component: {fileID: 792243831507658935}
+  - component: {fileID: 1459931379995859899}
   m_Layer: 4
   m_Name: WaterBasicNightime
   m_TagString: Untagged
@@ -102,5 +103,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29d87a2067719e047b1ca43e6e071f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1459931379995859899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5aed60f15150c428f2e9461c9b351f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

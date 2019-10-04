@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterRaise : MonoBehaviour
 {
     //movement speed in units per second
-    private float movementSpeed = 1f;
+    private float movementSpeed = 0.07f;
 
     void Update()
     {
