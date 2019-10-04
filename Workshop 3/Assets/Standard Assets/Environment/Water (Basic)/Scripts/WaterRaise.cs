@@ -5,15 +5,13 @@ using UnityEngine;
 public class WaterRaise : MonoBehaviour
 {
     //movement speed in units per second
-    private float movementSpeed = 10f;
+    private float movementSpeed = 0.45f;
 
     void Update()
     {
-        //get the Input from Vertical axis
-        float verticalInput = Input.GetAxis("Vertical");
 
         //update the position
-        transform.position = transform.position + new Vector3(verticalInput * movementSpeed * Time.deltaTime, 0);
+        transform.position = transform.position + new Vector3(0, movementSpeed * Time.deltaTime, 0);
 
         //output to log the position change
         Debug.Log(transform.position);
