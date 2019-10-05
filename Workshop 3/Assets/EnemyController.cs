@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class EnemyController : MonoBehaviour
 {
     public float wanderRadius;
@@ -12,6 +13,7 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent agent;
     private float timer;
     public GameObject Player;
+    private Vector3 offset;
     private bool wandering;
 
     // Use this for initialization
@@ -20,6 +22,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
         wandering = true;
+        offset = new Vector3(Random.Range(-2, 2), -0.5f, Random.Range(-2, 2));
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class EnemyController : MonoBehaviour
 
         if (!wandering)
         {
-            gameObject.transform.position = Player.transform.position - new Vector3(-2, -0.5f, -2);
+            gameObject.transform.position = Player.transform.position - offset;
         }
     }
 
